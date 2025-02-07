@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.minesweeper{
+    border:  1px solid black;
+    position: relative;
+}
+.minesweeper-header{
+    position: relative;
+    min-height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4A752C;
+    color: white;
+    padding: 8px;
+    z-index: 10;
+}
+.minesweeper-level{
+    padding: 4px 8px;
+    font-size: 14px;
+    border-radius: 10px;
+    outline: none;
+}
+.minesweeper-level:hover {
+    box-shadow: 0 0 8px 4px #ffffff40;
+}
+.minesweeper-header .minesweeper-flag-count{
+    display: flex;
+    gap: 2px;
+    font-size: 18px;
+}
+.minesweeper-controls{
+    display: flex;
+    gap: 8px;
+}
+.minesweeper-controls img {
+    padding: 0;
+    height: 28px;
+    cursor: pointer;
+}
+.minesweeper-control-button {
+    padding: 4px 8px;
+    font-size: 14px;
+    border-radius: 8px;
+    outline: none;
+    background-color: transparent;
+}
+.minesweeper-control-button:hover {
+    scale: 1.1;
+}
+.minesweeper-row{
+    display: flex;
+    justify-content: center;
+}
+.box{
+    color: black;
+    width: 40px;
+    height: 40px;
+    /* border: 1px solid black; */
+    /* display: flex; */
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    background-color: #A2D148;
+}
+
+.minesweeper-row:nth-child(odd) .box:nth-child(odd),
+.minesweeper-row:nth-child(even) .box:nth-child(even){
+    background-color: #AAD750;
+}
+.box:hover {
+    background-color: #BFE17D !important;
+}
+.box.revealed {
+    background-color: #D7B899 !important;
+}
+
+.minesweeper-row:nth-child(odd) .box.revealed:nth-child(odd),
+.minesweeper-row:nth-child(even) .box.revealed:nth-child(even) {
+    background-color: #E5C29f !important;
+}
+.box.flag , .box.mine{
+    color: transparent;
+}
+.box.flag::after ,.box.mine::after{
+    color: white; /* black white anything works opacity-high */
+    content: "🚩";
+    height: 40px;
+    width: 40px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box.mine::after{
+    content: "💣";
+}
+.box.text-1{
+    color: blue;
+}
+.box.text-2{
+    color: rgb(56, 143, 118);
+}
+.box.text-3{
+    color: red;
+}
+.box.text-4{
+    color: purple;
+}
+.box.text-5{
+    color: maroon;
+}
+.box.text-6{
+    color: rgb(56, 143, 118);
+}
+.box.text-7{
+    color: black;
+}
+.box.text-8{
+    color: grey;
+}
