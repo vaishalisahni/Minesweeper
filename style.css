@@ -4,6 +4,11 @@
     box-sizing: border-box;
 
 }
+body {
+    background: linear-gradient(135deg, #d7f5dc, #fefcd8);
+    backdrop-filter: blur(12px);
+  }
+  
 main{
     display: flex;
     justify-content: center;
@@ -11,12 +16,14 @@ main{
     height: 100vh;
 }
 .minesweeper{
-    border:  1px solid black;
+    /* border:  1px solid black; */
     position: relative;
+    transform: scale(1.25); /* UPDATED: Added zoom effect */
+    transform-origin: center;
 }
 .minesweeper-header{
     position: relative;
-    min-height: 44px;
+    min-height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,7 +41,7 @@ main{
 .minesweeper-level:hover {
     box-shadow: 0 0 8px 4px #ffffff40;
 }
-.minesweeper-header .minesweeper-flag-count{
+.minesweeper-flag-count{
     display: flex;
     gap: 2px;
     font-size: 18px;
@@ -45,12 +52,12 @@ main{
 }
 .minesweeper-controls img {
     padding: 0;
-    height: 28px;
+    height: 20px;
     cursor: pointer;
 }
 .minesweeper-control-button {
     padding: 4px 8px;
-    font-size: 14px;
+    /* font-size: 14px; */
     border-radius: 8px;
     outline: none;
     background-color: transparent;
@@ -63,17 +70,21 @@ main{
     justify-content: center;
 }
 .box{
+    display: flex;
     color: black;
     width: 40px;
     height: 40px;
     /* border: 1px solid black; */
     /* display: flex; */
     text-align: center;
-    line-height: 40px;
+    /* line-height: 40px; */
     font-size: 20px;
     cursor: pointer;
     position: relative;
     background-color: #A2D148;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .minesweeper-row:nth-child(odd) .box:nth-child(odd),
@@ -132,4 +143,37 @@ main{
 }
 .box.text-8{
     color: grey;
+}
+.minesweeper-endscreen {
+    display: none;
+    gap: 16px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: calc(100% - 44px);
+    backdrop-filter: blur(2px); /* <-- This creates the blur effect */
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    z-index: 5;
+    border-radius: 12px;
+}
+.minesweeper-endscreen-text {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.minesweeper-endscreen-restart {
+    padding: 8px 16px;
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: #4a752cd2;
+    color: white;
+    cursor: pointer;
+    outline: none;
+} .minesweeper-endscreen-restart:active {
+    scale: 0.96;
+    background-color: #4a752c;
 }
