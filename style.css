@@ -108,13 +108,15 @@ main{
 .box.flag::after ,.box.mine::after{
     color: white; /* black white anything works opacity-high */
     content: "🚩";
-    height: 40px;
-    width: 40px;
-    left: 0;
-    top: 0;
+    /* height: 40px; */
+    /* width: 40px; */
+    /* left: 0; */
+    /* top: 0; */
+    /* inset: 0; */
     position: absolute;
     display: flex;
     justify-content: center;
+    font-size: inherit;
     align-items: center;
 }
 .box.mine::after{

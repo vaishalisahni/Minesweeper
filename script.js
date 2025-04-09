@@ -19,11 +19,7 @@ const levelMapper = {
     },
 
 };
-// const boxSizeMap = {
-//     easy: 40,   // px
-//     medium: 26,
-//     hard: 20
-// };
+
 function endGame(message) {
     const board = document.querySelector(".minesweeper-board");
     const endScreen = document.querySelector('.minesweeper-endscreen');
